@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TeslaTab1View: View {
+    @State private var amount = 5432543.666
+    
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
@@ -18,10 +20,10 @@ struct TeslaTab1View: View {
                 Text("My fucking Tesla costs:")
                     .font(.title)
                 Divider()
-                Text("2543.666 USD")
+                Text(amount, format: .currency(code: "USD"))
                     .font(.title3)
                 Divider()
-                Text("5432543.666 USD/BTC")
+                Text(amount,format: .currency(code: "BTC"))
                     .font(.title3)
             }
                 .padding()
